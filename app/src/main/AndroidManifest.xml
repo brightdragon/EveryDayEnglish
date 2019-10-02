@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="vp.app.everyeng">
+    <!-- Include required permissions for Google Mobile Ads to run. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/everyenglish_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"> <!-- This meta-data tag is required to use Google Play Services. -->
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".main.EvEngMainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".my.EvEngMyActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".owner.OwnerActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".owner.OwnerWriteEditEngActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".setting.EvEngSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.SENDTO" />-->
+            <!--<data android:scheme="mailto" />-->
+            <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity
+            android:name=".notice.EvEngNoticeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".notice.EvEngNoticeDetailActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".notice.EvEngNoticeWriteActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+
+        <activity
+            android:name=".setting.EvEngVoiceSettingActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".sponsor.SponsorActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!--<receiver-->
+        <!--android:name=".alram.EvEngAlramReceiver"-->
+        <!--android:process=":remote"></receiver>-->
+
+        <receiver
+            android:name=".alram.EvEngAlarm1Receiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="vp.app.everyeng.alarm.action.trigger" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".alram.EvEngAlarm2Receiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="vp.app.everyeng.alarm.action.trigger" />
+            </intent-filter>
+
+        </receiver>
+
+        <receiver
+            android:name=".alram.EvEngAlarm3Receiver"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="vp.app.everyeng.alarm.action.trigger" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".alram.EvEngBootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".alram.EvEngSchedulingService"></service>
+
+        <service
+            android:name=".alram.EvEngJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+
+            >
+
+
+        </service>
+
+        <!--<activity-->
+        <!--android:name="com.google.android.gms.ads.AdActivity"-->
+        <!--android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"-->
+        <!--android:theme="@android:style/Theme.Translucent" />-->
+    </application>
+
+</manifest>

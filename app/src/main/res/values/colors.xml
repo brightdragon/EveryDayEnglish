@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1e90ff</color>
+    <color name="colorPrimaryDark">#1e90ff</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="app_main">#6d819c</color>
+    <color name="dark_navi">#b9d6de</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="tomato">#FF6347</color>
+    <color name="dark_gray">#2E2E2E</color>
+    <color name="gray">#808080</color>
+    <color name="transparent">#00000000</color>
+    <color name="green">#99E000</color>
+
+    <color name="line_big">#EDEDED</color>
+    <color name="line">#A4A4A4</color>
+    <color name="loding_dialog_trans">#A0000000</color>
+</resources>
